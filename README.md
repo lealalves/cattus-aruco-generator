@@ -1,6 +1,7 @@
 # ArUco Generator API
 
 API FastAPI para gerar etiquetas ArUco personalizáveis e retornar as imagens em base64.
+Números de 0 a 49 são possiveis gerar atualmente.
 
 ## Descrição
 
@@ -60,7 +61,7 @@ No repositório GitHub, configure os seguintes secrets:
 Requisição GET para gerar um marcador com ID 23:
 
 ```
-GET /generate?id=23&size=300&margin_size=15&border_bits=1
+GET /generate?id=23
 ```
 
 Resposta:
