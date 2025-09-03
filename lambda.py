@@ -116,6 +116,8 @@ class MultipleMarkersResponse(BaseModel):
 
 
 # Criação da aplicação FastAPI
+from mangum import Mangum
+
 app = FastAPI(
     title="Gerador de Etiquetas ArUco API",
     description="API para gerar etiquetas ArUco personalizáveis",
@@ -360,6 +362,11 @@ async def get_info():
             "border_bits": "1-3 bits"
         }
     }
+
+
+
+# Handler para AWS Lambda
+handler = Mangum(app)
 
 
 if __name__ == "__main__":
