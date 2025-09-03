@@ -37,7 +37,7 @@ def create_app() -> FastAPI:
         try:
             aruco_generator = ArucoGenerator()
             marker_img = aruco_generator.generate_single_marker(
-                id=id, size=size, margin_size=margin_size, border_bits=border_bits
+                marker_id=id, size=size, margin_size=margin_size, border_bits=border_bits
             )
             base64_img = image_to_base64(marker_img)
             return MarkerResponse(id=id, image_base64=base64_img)
